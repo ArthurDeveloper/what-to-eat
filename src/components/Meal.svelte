@@ -1,11 +1,12 @@
 <script>
-    import { onMount } from 'svelte';
+    import { afterUpdate } from 'svelte';
 
-    onMount(() => {
+    afterUpdate(() => {
         document.querySelector('#meal').scrollIntoView({
 		    behavior: 'smooth'
 	    });
     });
+
     export let mealData = {};
 
     function titleCase(str) {
