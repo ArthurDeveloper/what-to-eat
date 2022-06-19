@@ -1,4 +1,11 @@
 <script>
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        document.querySelector('#meal').scrollIntoView({
+		    behavior: 'smooth'
+	    });
+    });
     export let mealData = {};
 
     function titleCase(str) {
@@ -8,7 +15,7 @@
     }
 </script>
 
-<div class="bg-white rounded lg:w-1/2 md:w-4/6 sm:w-5/6 animate-fade-in">
+<div class="bg-white rounded lg:w-1/2 md:w-4/6 sm:w-5/6 animate-fade-in" id="meal">
     <div class="flex flex-col h-1/2 max-h-1/2 p-3">
         <div class="flex flex-col">
             <img src={mealData.image} alt={mealData.name} class="rounded w-auto h-auto" />
